@@ -410,4 +410,35 @@ D:\GameSaves\
 
 ---
 
+## 📄 开源信息
+
+**许可证**: [MIT License](LICENSE)
+
+**贡献**: 欢迎提交 Issue 和 Pull Request！
+
+**开发环境**:
+- .NET 10.0
+- Windows 10/11
+- Visual Studio 2022
+
+**构建项目**:
+```bash
+# 克隆仓库
+git clone https://github.com/你的用户名/SteamToolPlus.git
+
+# 进入目录
+cd SteamToolPlus
+
+# 还原 NuGet 包
+dotnet restore
+
+# 编译项目
+dotnet build
+
+# 运行项目
+dotnet run
+```
+
+---
+
 **感谢使用 SteamToolPlus！** 🎉
