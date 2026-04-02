@@ -7,6 +7,12 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 > ⚠️ **免责声明**：本项目仅供学习和研究使用。请使用正版游戏，尊重游戏开发者劳动成果。本工具不存储、不提供任何游戏文件，仅作为 Goldberg Emulator 的配置管理工具。
+>
+> 📥 **网盘下载**：[https://pan.baidu.com/s/19HPSTSj7v8IVa3k7rvt2dQ?pwd=519y](https://pan.baidu.com/s/19HPSTSj7v8IVa3k7rvt2dQ?pwd=519y)  提取码：`519y`
+>
+> 💝 转存至您的网盘（最好用手机），将会给 up 主带来微薄的 rmb 和满满的更新动力
+>
+> 📺 B 站空间：[https://space.bilibili.com/405707676](https://space.bilibili.com/405707676)
 
 ---
 
