@@ -15,8 +15,7 @@ jobs:
       matrix:
         configuration: [Release]
 
-    runs-on: windows-latest  # For a list of available runner types, refer to
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: windows-latest
 
     env:
       Solution_Name: SteamToolPlus.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
@@ -27,32 +26,40 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
-    - name: Install .NET Core
+    - name: 安装 .NET Core 
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
+    - name: 设置 MSBuild.exe
       uses: microsoft/setup-msbuild@v2
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
-    - name: Restore the application
+    - name: 还原
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
-    - name: Build
+    - name: 编译
       shell: cmd
       run: |
         打包.bat
 
-    - name: Upload Build Artifacts
+    - name: 上传程序
       uses: actions/upload-artifact@v4
       with:
         name: SteamToolPlus-${{ matrix.configuration }}-Build
-        path: PublishOutput\SteamToolPlus.exe
+        path: |
+          PublishOutput\SteamToolPlus.exe
+          PublishOutput\SteamToolPlus.pdb
+
+    - name: 上传资源文件夹
+      uses: actions/upload-artifact@v4
+      with:
+        name: SteamToolPlus-${{ matrix.configuration }}-Resources
+        path: |
+          Resources
+        
 
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
